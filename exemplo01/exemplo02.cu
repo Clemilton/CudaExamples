@@ -7,7 +7,7 @@ __global__
 void add(int n, float *x, float *y){
 
 	int index = threadIdx.x;
-	int stride = blockIdx.x;
+	int stride = blockDim.x;
 	for(int i = index; i<n ; i=i+stride){
 		y[i] = x[i]+y[i];
 	}
